@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.productbehaviors">
+
+    <browser:viewletManager
+        name="collective.productbehaviors.ViewletManager"
+        provides=".viewlets.IProductViewletManager"
+        class="plone.app.viewletmanager.manager.OrderedViewletManager"
+        layer="collective.productbehaviors.interfaces.IProductBehaviorsInstalled"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+      name="product.dimensions"
+      manager=".viewlets.IProductViewletManager"
+      template="viewlet_dimensions.pt"
+      for="collective.productbehaviors.interfaces.IDimensionable"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
+      name="product.weight"
+      manager=".viewlets.IProductViewletManager"
+      template="viewlet_weight.pt"
+      for="collective.productbehaviors.interfaces.IWeightable"
+      permission="zope2.View"
+      />
+
+</configure>
+

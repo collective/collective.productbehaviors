@@ -1,0 +1,9 @@
+
+   <dl class="data" i18n:domain="collective.productbehaviors">
+
+    <tal:viewlets repeat="viewlet view/viewlets">
+           <tal:viewlet replace="structure python:viewlet.render()" />
+    </tal:viewlets>
+
+   </dl>
+

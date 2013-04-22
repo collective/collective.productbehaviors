@@ -1,0 +1,3 @@
+                 
+    <dt i18n:translate="label_weight">Paino:</dt>
+    <dd tal:content="string:${context/weight} kg"/>

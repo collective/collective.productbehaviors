@@ -1,0 +1,65 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.productbehaviors">
+
+  <includeDependencies package="." />
+
+  <include package=".browser"/>
+
+  <grok:grok package="." />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Product behaviors"
+      directory="profiles/default"
+      description="Extension profile for brand and dimensions"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+
+    <plone:behavior
+        title="Dimensions"
+        description="Provide dimensions, ie. length, width and height"
+        provides=".measured.IDimensioned"
+        factory=".measured.Dimensioned"
+        marker=".interfaces.IDimensionable"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+    <plone:behavior
+        title="Weight"
+        description="Provide weight"
+        marker=".interfaces.IWeightable"
+        provides=".measured.IWeighted"
+        factory=".measured.Weighted"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+    <plone:behavior
+        title="Brand info"
+        description="Provide brand and model fields"
+        provides=".branded.IBrandInfo"
+        factory=".branded.BrandInfo"
+        marker=".branded.IBranded"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+    <plone:behavior
+        title="Name from brand information"
+        description="Provide title from brand and model (requires the 'Brand info' behavior)"
+        provides=".branded.INameFromBrandInfo"
+        factory=".branded.NameFromBrandInfo"
+        for=".branded.IBranded"
+        />
+
+
+</configure>
+

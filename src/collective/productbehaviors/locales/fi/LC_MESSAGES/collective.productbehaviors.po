@@ -1,0 +1,43 @@
+# translations for the collective.productbehaviors package.
+# Petri Savolainen <petri.savolainen@koodaamo.fi>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.productbehaviors\n"
+"POT-Creation-Date: 2010-09-07 20:31+0000\n"
+"PO-Revision-Date: 2013-04-22 16:57+0300\n"
+"Last-Translator: root <petri@koodaamo.fi>\n"
+"Language-Team: Finnish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: fi\n"
+"Language-Name: Suomeksi\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.productbehaviors\n"
+"Language: fi\n"
+
+#: schema
+msgid "label_brand"
+msgstr "Merkki"
+
+#: schema
+msgid "label_height"
+msgstr "Korkeus"
+
+#: schema
+msgid "label_length"
+msgstr "Pituus"
+
+#: schema
+msgid "label_model"
+msgstr "Malli"
+
+#: schema
+msgid "label_weight"
+msgstr "Paino"
+
+#: schema
+msgid "label_width"
+msgstr "Leveys"
+

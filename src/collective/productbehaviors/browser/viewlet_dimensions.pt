@@ -1,0 +1,8 @@
+    <dt i18n:translate="label_length">Pituus:</dt>
+    <dd tal:content="string:${context/length} mm"/>
+                 
+    <dt  i18n:translate="label_width">Leveys:</dt>
+    <dd tal:content="string:${context/width} mm"/>
+                 
+    <dt i18n:translate="label_height">Korkeus:</dt>
+    <dd tal:content="string:${context/height} kg"/>
