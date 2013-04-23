@@ -1,0 +1,11 @@
+    <dt i18n:translate="label_manufacturer">Valmistaja:</dt>
+    <dd tal:content="${context/manufacturer}"/>
+
+    <dt  i18n:translate="label_oems">OEM-valmistajat:</dt>
+    <dd tal:content="python:', '.join(context.oems)"/>
+
+    <dt  i18n:translate="label_importers">Maahantuojat:</dt>
+    <dd tal:content="python:', '.join(context.importers)"/>
+
+    <dt  i18n:translate="label_distributors">Jakelijat:</dt>
+    <dd tal:content="python:', '.join(context.distributors)"/>
