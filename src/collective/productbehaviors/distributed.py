@@ -42,6 +42,11 @@ class IDistributionInfo(form.Schema):
         required=False
     )
 
+    form.fieldset('distribution',
+         label=_(u'fieldset_distribution', default=u'Distribution'),
+         fields=['manufacturer', 'oems', 'importers', 'distributors']
+    )
+
 alsoProvides(IDistributionInfo,IFormFieldProvider)
 
 

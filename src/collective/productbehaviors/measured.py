@@ -20,6 +20,11 @@ class IWeighted(form.Schema):
         required=False
     )
 
+    form.fieldset('measures',
+            label=_(u'fieldset_measures', default=u'Measures'),
+            fields=['length', 'width', 'height']
+    )
+
 alsoProvides(IWeighted,IFormFieldProvider)
 
 class Weighted(object):
@@ -52,7 +57,9 @@ class IDimensioned(form.Schema):
         required=False
     )
 
-    # -*- Your Zope schema definitions here ... -*-
+    form.fieldset('measures',
+            fields=['length', 'width', 'height']
+    )
 
 alsoProvides(IDimensioned,IFormFieldProvider)
 
