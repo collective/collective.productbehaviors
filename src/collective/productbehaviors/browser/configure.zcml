@@ -17,6 +17,14 @@
     />
 
     <browser:viewlet
+      name="product.distribution"
+      manager=".viewlets.IProductViewletManager"
+      template="viewlet_distribution.pt"
+      for="collective.productbehaviors.interfaces.IDistributable"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
       name="product.dimensions"
       manager=".viewlets.IProductViewletManager"
       template="viewlet_dimensions.pt"

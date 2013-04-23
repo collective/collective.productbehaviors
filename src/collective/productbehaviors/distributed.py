@@ -14,7 +14,7 @@ from interfaces import IProduct
 from util import context_property
 
 
-class IDistributed(Interface):
+class IDistributable(Interface):
     "marker interface for delivery information"
 
 
