@@ -22,7 +22,7 @@ class IWeighted(form.Schema):
 
     form.fieldset('measures',
             label=_(u'fieldset_measures', default=u'Measures'),
-            fields=['length', 'width', 'height']
+            fields=['weight']
     )
 
 alsoProvides(IWeighted,IFormFieldProvider)
@@ -58,6 +58,7 @@ class IDimensioned(form.Schema):
     )
 
     form.fieldset('measures',
+            label=_(u'fieldset_measures', default=u'Measures'),
             fields=['length', 'width', 'height']
     )
 
