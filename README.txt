@@ -3,13 +3,16 @@
 Introduction
 ============
 
-This package provides dexterity behaviors for managing various physical product -related content:
+This package provides dexterity behaviors for managing content with various attributes commont to physical products:
 
- - branding
- - dimensions
+ - branding; brand/manufacturer and make/model
+ - dimensions; length, width and height
  - weight 
+ - distribution; manufacturer, oem's importers & distributors
 
-There's behavior that generates content name from brand and model, and a viewletmanager and viewlets
-for rendering the fields for those behaviors that are enabled.
+Besides schema extension behaviors for the above, there's a behavior providing INameFromTitle from the brand & model fields. 
 
-Developed on Plone 4.3.
+Also, a viewletmanager and behavior-associated viewlets provide support for rendering the abovementioned fields.
+
+The package is i18n'd. It's developed on Plone 4.3.
+

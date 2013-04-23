@@ -10,8 +10,9 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone.app.content.interfaces import INameFromTitle
 
 from collective.productbehaviors import MessageFactory as _
-
 from interfaces import IProduct
+from util import context_property
+
 
 class INameFromBrandInfo(INameFromTitle):
     "behavior"
@@ -46,16 +47,6 @@ class IBrandInfo(form.Schema):
     )
 
 alsoProvides(IBrandInfo,IFormFieldProvider)
-
-
-def context_property(name):
-    def getter(self):
-        return getattr(self.context, name)
-    def setter(self, value):
-        setattr(self.context, name, value)
-    def deleter(self):
-        delattr(self.context, name)
-    return property(getter, setter, deleter)
 
 
 class BrandInfo(object):

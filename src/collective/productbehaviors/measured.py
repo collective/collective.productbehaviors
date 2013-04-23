@@ -10,16 +10,7 @@ from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
 from collective.productbehaviors import MessageFactory as _
-
-
-def context_property(name):
-    def getter(self):
-        return getattr(self.context, name)
-    def setter(self, value):
-        setattr(self.context, name, value)
-    def deleter(self):
-        delattr(self.context, name)
-    return property(getter, setter, deleter)
+from util import context_property
 
 
 class IWeighted(form.Schema):
@@ -27,6 +18,11 @@ class IWeighted(form.Schema):
     weight = schema.Decimal(
         title=_(u'label_weight', default=u'Weight'),
         required=False
+    )
+
+    form.fieldset('measures',
+            label=_(u'fieldset_measures', default=u'Measures'),
+            fields=['length', 'width', 'height']
     )
 
 alsoProvides(IWeighted,IFormFieldProvider)
@@ -61,7 +57,9 @@ class IDimensioned(form.Schema):
         required=False
     )
 
-    # -*- Your Zope schema definitions here ... -*-
+    form.fieldset('measures',
+            fields=['length', 'width', 'height']
+    )
 
 alsoProvides(IDimensioned,IFormFieldProvider)
 
@@ -75,7 +73,7 @@ class Dimensioned(object):
     def __init__(self,context):
         self.context = context
 
-     
+
     # -*- Your behavior property setters & getters here ... -*-
 
     length = context_property("length")

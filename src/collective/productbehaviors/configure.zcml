@@ -44,11 +44,21 @@
         />
 
     <plone:behavior
+        title="Distribution info"
+        description="Provide distribution fields"
+        marker=".interfaces.IDistributable"
+        provides=".distributed.IDistributionInfo"
+        factory=".distributed.DistributionInfo"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+
+    <plone:behavior
         title="Brand info"
         description="Provide brand and model fields"
+        marker=".branded.IBranded"
         provides=".branded.IBrandInfo"
         factory=".branded.BrandInfo"
-        marker=".branded.IBranded"
         for="plone.dexterity.interfaces.IDexterityContent"
         />
 
