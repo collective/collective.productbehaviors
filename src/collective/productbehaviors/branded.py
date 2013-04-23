@@ -46,6 +46,10 @@ class IBrandInfo(form.Schema):
         required=False
     )
 
+    form.order_before(model='*')
+    form.order_before(brand='*')
+
+
 alsoProvides(IBrandInfo,IFormFieldProvider)
 
 
