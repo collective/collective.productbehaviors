@@ -29,16 +29,19 @@ class IDistributionInfo(form.Schema):
     oems = schema.List(
         title=_(u'label_oems', default=u'OEMs'),
         description = _(u'help_oems', default=u'Original equipment manufacturers'),
+        value_type=schema.TextLine(),
         required=False
     )
 
     importers = schema.List(
         title=_(u'label_importers', default=u'Importers'),
+        value_type=schema.TextLine(),
         required=False
     )
 
     distributors = schema.List(
         title=_(u'label_distributors', default=u'Distributors'),
+        value_type=schema.TextLine(),
         required=False
     )
 
